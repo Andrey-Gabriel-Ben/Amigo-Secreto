@@ -1,4 +1,5 @@
 let listaDeAmigos = [];
+let listaAmigosHTML = document.getElementById("lista-amigos");
 
 function adicionar() {
     let nomeAmigo = document.getElementById("nome-amigo").value;
@@ -10,15 +11,8 @@ function adicionar() {
 
     listaDeAmigos.push(nomeAmigo);
 
+    listaAmigosHTML.innerHTML = listaDeAmigos.join(", ");
 
-
-
-
-
-
-
-    //adicionar ele a uma aray de nomes
-    // imprimir na tela os nome escolhidos
 }
 
 function sortear() {
