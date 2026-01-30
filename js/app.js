@@ -3,7 +3,8 @@ let listaAmigosHTML = document.getElementById("lista-amigos");
 let listaEmbaralhada;
 
 function adicionar() {
-    let nomeAmigo = document.getElementById("nome-amigo").value;
+    let nomeAmigoGetId = document.getElementById("nome-amigo");
+    let nomeAmigo = nomeAmigoGetId.value;
 
     if (nomeAmigo == "") {
         alert("Parece que você não adicionou o nome de nenhum amigo à lista, por favor, tente novamente.");
@@ -18,12 +19,16 @@ function adicionar() {
     listaDeAmigos.push(nomeAmigo);
 
     listaAmigosHTML.innerHTML = listaDeAmigos.join(", ");
+
+    nomeAmigoGetId.value = "";
 };
 
 function sortear() {
     
     listaEmbaralhada = misturarOsNomes(listaDeAmigos);
     console.log(listaEmbaralhada);
+
+
 
 
 
