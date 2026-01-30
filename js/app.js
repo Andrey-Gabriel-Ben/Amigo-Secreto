@@ -29,34 +29,30 @@ function sortear() {
     console.log(listaEmbaralhada);
 
 
+    if (verificarRepeticoes(listaDeAmigos, listaEmbaralhada) === true) {
+        return sortear();
+    }
 
-
-
-    // criar uma função que embaralhe os nomes escolhidos
-    // verificar se a pessoa não se escpolheu
-    //armazenar a nova ordem em uma array
+    
     //imprimir nome por nome na nova arra
 }
 
+
+
+function verificarRepeticoes(array1, array2) {
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i] === array2[i]) {
+            console.log(`Nesse sorteioNesse sorteio ${array1[i]} se escolheu, refazendo sorteio...`);
+            return true;
+        };
+    };
+    return false;
+};
 
 function misturarOsNomes(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
-  }
+  };
   return array;
 }
-/*
-sugestão para embaralhar
-
-metodo pitagoras
-
-definir um numero que embaralhe a array original e exiba os novos na ordem, tal qual a sifra de cesar
-
-metodo mais arrisaco e diferente
-
-definir um mathrandom que imprima aleatoriamente um .lenth para sortear uma pessoa diferente
-
-
-
-*/
