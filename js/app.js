@@ -1,6 +1,6 @@
-let listaDeAmigos = [];
 let listaAmigosHTML = document.getElementById("lista-amigos");
-let listaEmbaralhada;
+let listaDeAmigos = [];
+let listaParaEmbaralhar = [];
 
 function adicionar() {
     let nomeAmigoGetId = document.getElementById("nome-amigo");
@@ -17,6 +17,7 @@ function adicionar() {
     };
 
     listaDeAmigos.push(nomeAmigo);
+    listaParaEmbaralhar.push(nomeAmigo);
 
     listaAmigosHTML.innerHTML = listaDeAmigos.join(", ");
 
@@ -24,8 +25,7 @@ function adicionar() {
 };
 
 function sortear() {
-    
-    listaEmbaralhada = misturarOsNomes(listaDeAmigos);
+    let listaEmbaralhada = misturarOsNomes(listaParaEmbaralhar);
     console.log(listaEmbaralhada);
 
 
