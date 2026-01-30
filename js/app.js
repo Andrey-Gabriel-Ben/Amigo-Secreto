@@ -1,5 +1,6 @@
 let listaDeAmigos = [];
 let listaAmigosHTML = document.getElementById("lista-amigos");
+let listaEmbaralhada;
 
 function adicionar() {
     let nomeAmigo = document.getElementById("nome-amigo").value;
@@ -17,10 +18,15 @@ function adicionar() {
     listaDeAmigos.push(nomeAmigo);
 
     listaAmigosHTML.innerHTML = listaDeAmigos.join(", ");
-
-}
+};
 
 function sortear() {
+    
+    listaEmbaralhada = misturarOsNomes(listaDeAmigos);
+    console.log(listaEmbaralhada);
+
+
+
     // criar uma função que embaralhe os nomes escolhidos
     // verificar se a pessoa não se escpolheu
     //armazenar a nova ordem em uma array
@@ -28,6 +34,13 @@ function sortear() {
 }
 
 
+function misturarOsNomes(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 /*
 sugestão para embaralhar
 
